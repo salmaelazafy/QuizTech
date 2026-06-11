@@ -1,5 +1,12 @@
 package edu.hightech.quiztech.repository;
 
-public class CasTestRepository {
+import edu.hightech.quiztech.entity.CasTest;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CasTestRepository extends JpaRepository<CasTest, Long> {
+
+    List<CasTest> findByQuestionProgrammationId(Long questionProgrammationId);
 
 }
